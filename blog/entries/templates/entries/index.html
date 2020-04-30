@@ -18,14 +18,20 @@
           </div>
         </div
       {% endfor %}
-      <!-- Pagination -->
+
+      {% if is_paginated %}
       <ul class="pagination justify-content-center mb-4">
+        {% if page_obj.has_previous %}
         <li class="page-item">
-          <a class="page-link" href="#">&larr; Previous Page</a>
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&larr; Previous Page</a>
         </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Next Page &rarr;</a>
-        </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+          <li class="page-item ">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next Page &rarr;</a>
+          </li>
+        {% endif %}
       </ul>
+      {% endif %}
     </div>
 {% endblock %}
