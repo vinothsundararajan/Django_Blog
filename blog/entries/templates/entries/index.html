@@ -10,7 +10,7 @@
           <div class="card-body">
             <h2 class="card-title">{{ entry.entry_title }}</h2>
             <p class="card-text">{{ entry.entry_text|truncatechars:200 }}</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <a href="{% url 'entry-detail' entry.pk %}" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             Posted on {{ entry.entry_date }} by
