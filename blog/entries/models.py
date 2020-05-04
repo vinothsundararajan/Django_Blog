@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Entry(models.Model):
     entry_title = models.CharField(max_length=50)
-    entry_text = models.TextField()
+    entry_text = RichTextUploadingField()
     entry_date = models.DateTimeField(auto_now_add=True)
     entry_author = models.ForeignKey(User, on_delete=models.CASCADE) # import User from django
     class Meta:
