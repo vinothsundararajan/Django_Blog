@@ -22,3 +22,7 @@ class CreateEntryView(CreateView):
     def form_valid(self,form):
         form.instance.entry_author = self.request.user
         return super().form_valid(form)
+
+def contact(request):
+    template_name = 'entries/contact.html'
+    return render(request, 'entries/contact.html',{})
