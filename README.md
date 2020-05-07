@@ -1,3 +1,8 @@
+# Output:
+
+	![](https://github.com/vinothsundararajan/Django_Blog/blob/master/blog/output.png)
+
+
 # Django:
     requirments:
     	pip
